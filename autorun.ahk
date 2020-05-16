@@ -4,9 +4,10 @@
 ;Recommended for new scripts due to its superior speed and reliability.
 SendMode Input
 
-#IfWinActive, 7 Days To Die
-$CapsLock::
-#IfWinActive, Arma 3
+; Include groups.ahk file
+#Include %A_LineFile%\..\groups.ahk
+
+#IfWinActive ahk_group AutoRun_CapsLock
 $CapsLock::
    If (Switch := !Switch) {
        Send {LShift Down}
@@ -17,21 +18,17 @@ $CapsLock::
    }
 Return
 
+#IfWinActive ahk_group AutoRun_ShiftW
+$+w::
+   Toggle := true
+   Send {w down}
+   while (Toggle)
+   Sleep, 10
+   Send {w up}
+return
+$~w::
+   Toggle := false
+return
 
-#IfWinActive, DayZ
-^r::
-   If (Switch := !Switch) {
-       Send {LShift Down}
-       Send {w Down}
-   } Else {
-       Send {LShift Up}
-       Send {w up}
-   }
-Return
-^w::
-   If (Switch := !Switch) {
-       Send {w Down}
-   } Else {
-       Send {w up}
-   }
-Return
+; Include reload.ahk script
+#Include %A_LineFile%\..\reload.ahk
