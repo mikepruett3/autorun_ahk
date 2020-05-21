@@ -8,7 +8,7 @@
 #Include %A_LineFile%\..\groups.ahk
 
 #IfWinActive ahk_group AutoClick
-^w::
+^LButton::
    ;Toggle := true
    Click, Down
    ;while (Toggle)
