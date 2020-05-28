@@ -18,5 +18,5 @@ return
    ;Toggle := false
 ;return
 
-; Include reload.ahk script
-#Include %A_LineFile%\..\reload.ahk
+; Include tools.ahk script
+#Include %A_LineFile%\..\tools.ahk
