@@ -14,9 +14,19 @@
    ;while (Toggle)
    ;Sleep, 5
 return
-;~w::
-   ;Toggle := false
-;return
+
+#IfWinActive ahk_group AutoClickHold
+^LButton::
+   While GetKeyState("CapsLock","T") {
+      Click, Down
+      Sleep, 1000
+      Click, Up
+      ;KeyIsDown := GetKeyState("CapsLock","T")
+      ;If GetKeyState("CapsLock","T") {
+      ;   Toggle := false
+      ;}
+   }
+return
 
 ; Include tools.ahk script
 #Include %A_LineFile%\..\tools.ahk

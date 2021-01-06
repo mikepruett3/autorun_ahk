@@ -11,3 +11,6 @@ GroupAdd, AutoRun_CapsLock, ahk_exe RustClient.exe
 
 ;Games that use <Control> + <W> to AutoClick
 GroupAdd, AutoClick, ahk_exe FactoryGame-Win64-Shipping.exe
+
+;Games that use <Control> + <LeftMouseButton> to AutoClick and Hold
+GroupAdd, AutoClickHold, ahk_exe Cyberpunk2077.exe
